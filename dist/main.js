@@ -2523,8 +2523,9 @@ function populateSlider( parent, images )
 
 		image
 			.addStyles( (0,_emotion_css__WEBPACK_IMPORTED_MODULE_0__.css)( {
-				height: "20em",
-				cursor: "pointer",
+				height    : "20em",
+				cursor    : "pointer",
+				transition: "all 0.5s ease",
 			 } ) )
 			.addId( `image-${ images.indexOf( source )+1 }` )
 			.src = source;
@@ -2559,18 +2560,17 @@ function addListeners( imageSlider )
 function addScrollProgress( imageSlider )
 {
 	const scrollProgress = document.createElement( "div" )
-			.addStyles( (0,_emotion_css__WEBPACK_IMPORTED_MODULE_0__.css)( {
-				height         : "0.5em",
-				width          : "100%",
-				backgroundColor: "var( --mainColor )",
-				transition     : "all 0.5s ease",
-			} ) )
-			.addId( "scroll-progress" )
-			.appendTo( imageSlider.parentElement ),
-		maxWidth = imageSlider.scrollWidth - imageSlider.clientWidth;
+		.addStyles( (0,_emotion_css__WEBPACK_IMPORTED_MODULE_0__.css)( {
+			height         : "0.5em",
+			width          : "100%",
+			backgroundColor: "var( --mainColor )",
+			transition     : "all 0.5s ease",
+		} ) )
+		.addId( "scroll-progress" )
+		.appendTo( imageSlider.parentElement );
 
 	imageSlider.addEventListener( "scroll", () =>
-	{ scrollProgress.style.width = `${ imageSlider.scrollLeft / maxWidth  * 100 }%` } );
+	{ scrollProgress.style.width = `${ imageSlider.scrollLeft / ( imageSlider.scrollWidth - imageSlider.clientWidth )  * 100 }%` } );
 }
 
 })();

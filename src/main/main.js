@@ -76,8 +76,9 @@ function populateSlider( parent, images )
 
 		image
 			.addStyles( css( {
-				height: "20em",
-				cursor: "pointer",
+				height    : "20em",
+				cursor    : "pointer",
+				transition: "all 0.5s ease",
 			 } ) )
 			.addId( `image-${ images.indexOf( source )+1 }` )
 			.src = source;
