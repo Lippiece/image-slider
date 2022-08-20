@@ -97,7 +97,6 @@ function addListeners( imageSlider )
 {
 	imageSlider.addEventListener( "click", ( event ) =>
 	{
-
 		toggleCurrentImage( event.target );
 		imageSlider.scrollLeft = event.target.offsetLeft - imageSlider.offsetLeft;
 		event.target.addEventListener( "mouseleave", () =>
@@ -114,6 +113,8 @@ function addScrollProgress( imageSlider )
 {
 	const scrollProgress = document.createElement( "div" )
 		.addStyles( css( {
+			position       : "relative",
+			left           : "25%",
 			height         : "0.5em",
 			width          : "0%",
 			backgroundColor: "var( --mainColor )",
@@ -123,5 +124,5 @@ function addScrollProgress( imageSlider )
 		.appendTo( imageSlider.parentElement );
 
 	imageSlider.addEventListener( "scroll", () =>
-	{ scrollProgress.style.width = `${ imageSlider.scrollLeft / ( imageSlider.scrollWidth - imageSlider.clientWidth )  * 100 }%` } );
+	{ scrollProgress.style.width = `${ imageSlider.scrollLeft / ( imageSlider.scrollWidth - imageSlider.clientWidth ) * 50 }%` } );
 }
