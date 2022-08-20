@@ -112,16 +112,15 @@ function addListeners( imageSlider )
 function addScrollProgress( imageSlider )
 {
 	const scrollProgress = document.createElement( "div" )
-			.addStyles( css( {
-				height         : "0.5em",
-				width          : "100%",
-				backgroundColor: "var( --mainColor )",
-				transition     : "all 0.5s ease",
-			} ) )
-			.addId( "scroll-progress" )
-			.appendTo( imageSlider.parentElement ),
-		maxWidth = imageSlider.scrollWidth - imageSlider.clientWidth;
+		.addStyles( css( {
+			height         : "0.5em",
+			width          : "100%",
+			backgroundColor: "var( --mainColor )",
+			transition     : "all 0.5s ease",
+		} ) )
+		.addId( "scroll-progress" )
+		.appendTo( imageSlider.parentElement );
 
 	imageSlider.addEventListener( "scroll", () =>
-	{ scrollProgress.style.width = `${ imageSlider.scrollLeft / maxWidth  * 100 }%` } );
+	{ scrollProgress.style.width = `${ imageSlider.scrollLeft / ( imageSlider.scrollWidth - imageSlider.clientWidth )  * 100 }%` } );
 }
