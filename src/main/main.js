@@ -85,7 +85,7 @@ function populateSlider( parent, images )
 		parent.append( image );
 	}
 }
-function setCurrentImage( image )
+function toggleCurrentImage( image )
 {
 	image.classList.toggle( css( {
 		marginLeft : "2em",
@@ -97,13 +97,13 @@ function addListeners( imageSlider )
 {
 	imageSlider.addEventListener( "click", ( event ) =>
 	{
-		if ( event.target.id.startsWith( "image-" ) )
-		{
-			setCurrentImage( event.target );
-			event.target.addEventListener( "mouseleave", () =>
-			{ setCurrentImage( event.target ) }, { once: true } );
-		}
+
+		toggleCurrentImage( event.target );
+		imageSlider.scrollLeft = event.target.offsetLeft - imageSlider.offsetLeft;
+		event.target.addEventListener( "mouseleave", () =>
+		{ toggleCurrentImage( event.target ) }, { once: true } );
 	} );
+	/* Scroll horizontally */
 	imageSlider.addEventListener( "wheel", ( event ) =>
 	{
 		event.preventDefault();
@@ -115,7 +115,7 @@ function addScrollProgress( imageSlider )
 	const scrollProgress = document.createElement( "div" )
 		.addStyles( css( {
 			height         : "0.5em",
-			width          : "100%",
+			width          : "0%",
 			backgroundColor: "var( --mainColor )",
 			transition     : "all 0.5s ease",
 		} ) )
