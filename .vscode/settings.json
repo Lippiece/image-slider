@@ -8,5 +8,16 @@
 	},
 	"files.exclude": {
 		"**/.git": false
-	}
+	},
+	"spellright.language": [
+		"en",
+		"ru"
+	],
+	"spellright.documentTypes": [
+		"markdown",
+		"latex",
+		"plaintext",
+		"javascript"
+	],
+	"cSpell.language": "en-GB,lorem"
 }
