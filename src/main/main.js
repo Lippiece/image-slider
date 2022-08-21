@@ -19,17 +19,6 @@ Element.prototype.addStyles = function( styles )
 
 	return this;
 };
-const _body                 = document.querySelector( "body" )
-	.addStyles( css( {
-		"--mainColor"  : "hsla(15, 100%, 60%, 0.7)",
-		backgroundColor: "#222",
-		height         : "100vh",
-		width          : "100vw",
-		display        : "flex",
-		flexDirection  : "column",
-		justifyContent : "center",
-		color          : "var( --mainColor )",
-	} ) );
 export default class ImageSlider
 {
 	initializeImageSlider( parent, images )
