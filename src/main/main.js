@@ -1,9 +1,5 @@
 // https://www.behance.net/gallery/116696659/Kombu-Art-Design-Culture-Magazine
 import { css } from "@emotion/css";
-// import all images
-import source1 from "./1.jfif";
-import source2 from "./2.jfif";
-import source3 from "./3.jfif";
 
 Element.prototype.appendTo = function( parent )
 {
@@ -152,4 +148,3 @@ class Image
 		return this.img;
 	}
 }
-const _testSlider = new ImageSlider( document.querySelector( "#content" ), [source1, source2, source3] );
