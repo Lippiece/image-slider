@@ -34,8 +34,7 @@ const _body                 = document.querySelector( "body" )
 		justifyContent : "center",
 		color          : "var( --mainColor )",
 	} ) );
-
-class ImageSlider
+export default class ImageSlider
 {
 	initializeImageSlider( parent, images )
 	{
@@ -101,6 +100,7 @@ class ImageSlider
 	constructor( parent, images )
 	{ this.initializeImageSlider( parent, images ) }
 }
+
 class Image
 {
 	toggleCurrentImage( image )
