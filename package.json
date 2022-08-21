@@ -5,8 +5,7 @@
 	"scripts": {
 		"build": "webpack --watch",
 		"start": "webpack-dev-server",
-		"push-dist": "git subtree push --prefix dist origin gh-pages",
-		"brunch": "brunch build --production"
+		"push-dist": "git subtree push --prefix dist origin gh-pages"
 	},
 	"keywords": [],
 	"author": "lippiece",

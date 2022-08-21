@@ -97,10 +97,12 @@ function addListeners( imageSlider )
 {
 	imageSlider.addEventListener( "click", ( event ) =>
 	{
-		toggleCurrentImage( event.target );
-		imageSlider.scrollLeft = event.target.offsetLeft - imageSlider.offsetLeft;
-		event.target.addEventListener( "mouseleave", () =>
-		{ toggleCurrentImage( event.target ) }, { once: true } );
+		if ( event.target.tagName === "IMG" )
+		{
+			resetCurrentImage( imageSlider );
+			toggleCurrentImage( event.target );
+			imageSlider.scrollLeft = event.target.offsetLeft - imageSlider.offsetLeft;
+		}
 	} );
 	/* Scroll horizontally */
 	imageSlider.addEventListener( "wheel", ( event ) =>
@@ -108,6 +110,19 @@ function addListeners( imageSlider )
 		event.preventDefault();
 		imageSlider.scrollLeft += event.deltaY/2;
 	} );
+}
+function removeCurrentIfPresent( image )
+{
+	if ( image.classList.contains( css( {
+		marginLeft : "2em",
+		marginRight: "2em",
+		height     : "30em",
+	} ) ) ) { toggleCurrentImage( image ) }
+}
+function resetCurrentImage( imageSlider )
+{
+	for ( const image of imageSlider.children )
+	{ removeCurrentIfPresent( image ) }
 }
 function addScrollProgress( imageSlider )
 {
