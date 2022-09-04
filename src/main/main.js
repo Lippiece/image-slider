@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 
-Element.prototype.appendTo = function( parent ) {
+import Image from "./image.js";
 
   parent.append( this );
 
