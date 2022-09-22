@@ -68,9 +68,6 @@ export default {
 		],
 	},
 	devServer: {
-		static  : { directory: "./dist" },
 		compress: true,
-		port    : 9000,
-		host    : "localhost",
 	},
 };
