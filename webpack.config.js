@@ -8,6 +8,9 @@ export default {
   // Entry    : "/src/main/script.js",
   mode: "development",
   devtool: "source-map",
+  experiments: {
+    topLevelAwait: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Test",
