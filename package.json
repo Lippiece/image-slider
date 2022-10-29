@@ -1,7 +1,7 @@
 {
 	"name": "@adipiscing/image-slider",
 	"type": "module",
-  "version": "1.4.6",
+  "version": "1.5.6",
 	"scripts": {
 		"test": "vitest --globals",
 		"testOnce": "vitest --globals --coverage",

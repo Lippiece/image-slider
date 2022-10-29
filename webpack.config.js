@@ -11,6 +11,18 @@ export default {
   experiments: {
     topLevelAwait: true,
   },
+  optimization: {
+    runtimeChunk: "single",
+    usedExports: true,
+    splitChunks: {
+      chunks: "all",
+    }
+  },
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "dist"),
+    clean: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Test",
@@ -30,10 +42,6 @@ export default {
   `,
     }),
   ],
-  output: {
-    filename: "main.js",
-    path: path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "dist"),
-    clean: true,
   },
   module: {
     rules: [
