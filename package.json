@@ -1,38 +1,38 @@
 {
-	"name": "@adipiscing/image-slider",
-	"type": "module",
-  "version": "1.5.6",
-	"scripts": {
-		"test": "vitest --globals",
-		"testOnce": "vitest --globals --coverage",
-		"build": "webpack --watch",
-		"start": "webpack-dev-server",
-		"push-dist": "git subtree push --prefix dist origin gh-pages"
-	},
-	"keywords": [],
-	"author": "lippiece",
-	"license": "ISC",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Lippiece/drop-down-menu"
-	},
-	"main": "/src/main/main.js",
-	"description": "",
-	"dependencies": {
-		"@adipiscing/image-slider": "^1.0.1",
-		"@emotion/css": "^11.10.0",
-		"css-loader": "^6.7.1",
-		"html-webpack-plugin": "^5.5.0",
-		"image-minimizer-webpack-plugin": "^3.3.0",
-		"imagemin": "^8.0.1",
-		"imagemin-gifsicle": "^7.0.0",
-		"imagemin-mozjpeg": "^10.0.0",
-		"imagemin-pngquant": "^9.0.2",
-		"imagemin-svgo": "^10.0.1",
-		"style-loader": "^3.3.1",
-		"vitest": "^0.23.4",
-		"webpack": "^5.74.0",
-		"webpack-cli": "^4.10.0",
-		"webpack-dev-server": "^4.10.0"
-	}
+  "name": "@adipiscing/image-slider",
+  "version": "1.6.6",
+  "description": "",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lippiece/drop-down-menu"
+  },
+  "license": "ISC",
+  "author": "lippiece",
+  "type": "module",
+  "main": "/src/main/main.js",
+  "scripts": {
+    "build": "webpack --watch",
+    "push-dist": "git subtree push --prefix dist origin gh-pages",
+    "start": "webpack-dev-server",
+    "test": "vitest --globals",
+    "testOnce": "vitest --globals --coverage"
+  },
+  "dependencies": {
+    "@adipiscing/image-slider": "^1.0.1",
+    "@emotion/css": "^11.10.0",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "image-minimizer-webpack-plugin": "^3.3.0",
+    "imagemin": "^8.0.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^10.0.1",
+    "style-loader": "^3.3.1",
+    "vitest": "^0.23.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.0"
+  }
 }
